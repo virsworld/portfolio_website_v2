@@ -1,8 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light theme colors */
+  --background: #f0f0f0;
+  --foreground: #282424;
+
+  /* Other theme colors */
+  --color-primary: #921a1a;
+  --color-secondary: #f2773d;
+  --color-tertiary: #fcf3b7;
+  --color-success: #6abd54;
+  --color-info: #1b84c7;
+  --color-warning: #e6d574;
+  --color-dark-green: #176757;
+  --color-sky-blue: #a3d9dc;
+  --color-dark-blue: #154239;
+  --color-gold: #dd973f;
+  --color-coral: #da572e;
+  --color-mint: #47a867;
+  --color-border: #d1d5dc;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  p {
+    font-family: var(--font-mono), sans-serif;
+  }
+
+  .animate-tile-fade-in {
+    animation: tile-fade-in 0.3s forwards;
+  }
+
+  .animate-tile-fade-out {
+    animation: tile-fade-out 0.3s forwards;
+  }
+}
+
+@keyframes tile-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes tile-fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 @theme inline {
@@ -10,17 +62,63 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-success: var(--color-success);
+  --color-info: var(--color-info);
+  --color-warning: var(--color-warning);
+  --color-dark-green: var(--color-dark-green);
+  --color-sky-blue: var(--color-sky-blue);
+  --color-dark-blue: var(--color-dark-blue);
+  --color-gold: var(--color-gold);
+  --color-coral: var(--color-coral);
+  --color-mint: var(--color-mint);
+  --color-border: var(--color-border);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark theme colors */
+    --background: #282424;
+    --foreground: #f0f0f0;
+    --color-border: #364153;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes move-underline {
+  from {
+    background-position: 0% 100%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.animated-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+
+  background-image: linear-gradient(
+    to right,
+    var(--color-info),
+    var(--color-sky-blue),
+    var(--color-info)
+  );
+  background-size: 200% 2px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  padding-bottom: 2px;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.animated-underline:hover {
+  animation: move-underline 1s linear infinite;
 }

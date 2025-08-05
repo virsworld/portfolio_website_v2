@@ -1,0 +1,56 @@
+[
+    {
+        "id": 0,
+        "title": "Discrd Music Bot",
+        "year": 2024,
+        "tags": ["Python", "Youtube", "Discord"],
+        "description": "Music bot that plays audio in discord voice channel based on user query.",
+        "img": "/assets/project/music_bot.png",
+        "slug": "discord-music-bot"
+    },
+    {
+        "id": 1,
+        "title": "Reversi Bot",
+        "year": 2024,
+        "tags": ["C", "Minimax", "Game Theory"],
+        "description": "A bot that utilizes the Minimax algorithm to play Reversi also known as Othello.",
+        "img": "/assets/project/reversi.png",
+        "slug": "reversi-bot"
+    },
+    {
+        "id": 2,
+        "title": "Personal Website V1",
+        "year": 2024,
+        "tags": ["React", "Tailwind", "Three.js"],
+        "description": "The first iteration of my personal website in which I explored the use of 3D models.",
+        "img": "/assets/project/portfolio_v1.png",
+        "slug": "personal-website-v1"
+    },
+    {
+        "id": 3,
+        "title": "Simple Stream",
+        "year": 2024,
+        "tags": ["React", "Tailwind", "Node.js", "MongoDB"],
+        "description": "Basic note taking platform.",
+        "img": "/assets/project/notes_app.png",
+        "slug": "simple-stream"
+    },
+    {
+        "id": 4,
+        "title": "TestcaseDB",
+        "year": 2024,
+        "tags": ["React", "Tailwind", "Node.js", "Express.js"],
+        "description": "Platform for programming students to share test cases.",
+        "img": "/assets/project/tcdb.png",
+        "slug": "testcaseDB"
+    },
+    {
+        "id": 5,
+        "title": "Cracker",
+        "year": 2025,
+        "tags": ["Verilog", "ModelSim", "FPGA", "Hashing"],
+        "description": "Attempts to crack user passwords taken from leaked hash data by hashing common passwords and cross-referencing.",
+        "img": "/assets/project/cracker_project.png",
+        "slug": "cracker"
+    }
+]
