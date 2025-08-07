@@ -16,7 +16,7 @@ export default async function ProjectsFiltered({ params }: ProjectFilterPageProp
     const { filter_type, filter_value } = await params; // await to silence an error
     const projects: Project[] = projectsData;
 
-    const filteredProjects = projects.filter(project => {
+    const filteredProjects = projects.reverse().filter(project => {
         const sanitized_value = sanitize_to_slug(filter_value.toString());
 
         if (filter_type == 'tags') {
@@ -49,7 +49,7 @@ export default async function ProjectsFiltered({ params }: ProjectFilterPageProp
                     {/* Projects */}
                     <div className="grid grid-cols-1">
                         {filteredProjects.length > 0 ? (
-                            filteredProjects.reverse().map((project) => (
+                            filteredProjects.map((project) => (
                                 <ProjectCard key={project.id} project={project} />
                             ))
                         ) : (

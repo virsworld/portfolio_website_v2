@@ -16,7 +16,7 @@ export default async function BlogsFiltered({ params }: BlogFilterPageProps) {
     const { filter_type, filter_value } = await params; // await to silence an error
     const blog_posts: Blog[] = blogData;
 
-    const filteredBlogs = blog_posts.filter(blog => {
+    const filteredBlogs = blog_posts.reverse().filter(blog => {
         const sanitized_value = sanitize_to_slug(filter_value.toString());
 
         if (filter_type == 'tags') {
@@ -49,7 +49,7 @@ export default async function BlogsFiltered({ params }: BlogFilterPageProps) {
                     {/* Projects */}
                     <div className="grid grid-cols-1">
                         {filteredBlogs.length > 0 ? (
-                            filteredBlogs.reverse().map((blog) => (
+                            filteredBlogs.map((blog) => (
                                 <BlogCard key={blog.id} blogPost={blog} />
                             ))
                         ) : (
