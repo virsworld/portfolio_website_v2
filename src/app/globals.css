@@ -30,6 +30,10 @@
     font-family: var(--font-mono), sans-serif;
   }
 
+  li {
+    font-family: var(--font-mono), sans-serif;
+  }
+
   .animate-tile-fade-in {
     animation: tile-fade-in 0.3s forwards;
   }

@@ -8,7 +8,7 @@ interface BlogCardProps {
     blogPost: Blog;
 }
 
-const ProjectCard: React.FC<BlogCardProps> = ({ blogPost }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ blogPost }) => {
   return (
     <div className="p-14 pb-0 pr-0">
         <Link href={`/blogpost/${blogPost.slug}`}>
@@ -49,4 +49,4 @@ const ProjectCard: React.FC<BlogCardProps> = ({ blogPost }) => {
   );
 }
 
-export default ProjectCard
+export default BlogCard

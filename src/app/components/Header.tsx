@@ -2,6 +2,8 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { MdAlternateEmail } from "react-icons/md";
+import { FaLinkedin, FaDiscord } from "react-icons/fa";
 
 interface HeaderProps {
     is_front_page: Boolean
@@ -59,10 +61,16 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
         }
     }, [isMenuOpen, navLinks]);
 
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     return (
         <>
             {/* Full-screen Navigation Menu */}
-            <header className={`w-full z-50 flex items-center justify-between px-6 py-4`}>
+            <header className={`w-full z-50 relative flex items-center justify-between px-6 py-4`}>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                     <Image
                         className="opacity-90 z-50 hover:opacity-100 invert dark:invert-0"
@@ -98,30 +106,58 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                     ${isMenuVisible ? 'opacity-100 visible' : 'opacity-0 invisible'}
                     bg-background grid grid-cols-2 grid-rows-2`}
             >
-                {navLinks.map((link, index) => (
-                    <div
-                        key={link.name}
-                        style={{
-                            // animationDelay: `${isMenuOpen ? index * 0.1 : (navLinks.length - 1 - index) * 0.1}s`, 
-                        }}
-                        className={`
-                            flex items-center justify-center
-                            bg-background
-                            text-foreground
-                            
-                            transition-opacity duration-300
-                            ${visibleLinks.includes(link.name) ? 'opacity-100' : 'opacity-0'}
-                        `}
-                    >
-                        <Link
-                            href={link.href}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="w-full h-full flex items-center justify-center"
+                {navLinks.map((link, index) => {
+                    if (link.name !== 'Contact')
+                        return <div
+                            key={link.name}
+                            className={`
+                                flex items-center justify-center
+                                bg-background
+                                text-foreground
+                                underline
+                                
+                                transition-opacity duration-300
+                                ${visibleLinks.includes(link.name) ? 'opacity-100' : 'opacity-0'}
+                            `}
                         >
-                            <p className="text-xl sm:text-3xl font-bold">{link.name}</p>
-                        </Link>
-                    </div>
-                ))}
+                            <Link
+                                href={link.href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="w-full h-full flex items-center justify-center"
+                            >
+                                <p className="text-xl sm:text-3xl font-bold">{link.name}</p>
+                            </Link>
+                        </div>
+                    else
+                        return <div
+                            key={link.name}
+                            className={`
+                                relative
+                                bg-background
+                                text-foreground
+                                pl-20
+                                pt-70
+                                transition-opacity duration-300
+                                ${visibleLinks.includes(link.name) ? 'opacity-100' : 'opacity-0'}
+                            `}
+                        >
+                            <p className="text-xl sm:text-3xl font-bold">{`${link.name}.`}</p>
+                            <div className="fixed bottom-0 right-0 p-4">
+                                <ul>
+                                    <div className="flex gap-2">
+                                        <MdAlternateEmail className="dark:invert-1" size={22}/><li>virpatel71@gmail.com</li>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <FaLinkedin className="dark:invert-1 " size={21}/><a target="_blank" href="https://www.linkedin.com/in/vir-patel"><li>linkedin.com/in/vir-patel</li></a>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <FaDiscord className="dark:invert-1 " size={22}/><li>virwashere</li>
+                                    </div>
+                                </ul>
+                            </div>
+
+                        </div>
+                })}
             </div>
         </>
     )

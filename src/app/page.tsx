@@ -1,10 +1,11 @@
+'use client';
 import Image from "next/image";
 
 import Header from "./components/Header";
 
-import Model from "./components/Model";
+import dynamic from 'next/dynamic';
 
-
+const Model = dynamic(() => import('../app/components/Model'), { ssr: false });
 
 export default function Home() {
   return (

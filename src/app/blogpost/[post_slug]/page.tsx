@@ -28,7 +28,7 @@ export default async function BlogPostContent({ params }: BlogPostPageProps) {
 			<Header is_front_page={false} />
 			<main className="overflow-hidden mx-auto p-14 pb-0">
                 <h2 className='text-5xl font-bold'>{`${curr_post.title}`}</h2>
-                <p className='border-b pt-2 pb-2 font-mono'>{`${curr_post.description}`}</p>
+                <p className='border-b pt-2 pb-2'>{`${curr_post.description}`}</p>
                 <div className='p-20'>{`${curr_post.content}`}</div>
             </main>
         </>

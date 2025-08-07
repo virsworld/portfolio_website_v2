@@ -31,7 +31,7 @@ const Search: React.FC<SearchProps> = ({ cards, quote, type }) => {
             { /* Search by tag */ }
             <p className="text-sm">BY TAG:</p>
             <div className="grid gap-1.5 mt-3 pl-10">
-                {[...get_unique_tags(cards)].map((tag, index) => (
+                {[...get_unique_tags(cards)].sort().map((tag, index) => (
                     <p key={index}>
                         <Link 
                             key={index} 
@@ -48,7 +48,7 @@ const Search: React.FC<SearchProps> = ({ cards, quote, type }) => {
             { /* Search by year */ }
             <p className="mt-6 text-sm">BY YEAR:</p>
             <div className="grid gap-1.5 mt-3 pl-10">
-                {[...get_unique_years(cards)].map((year, index) => (
+                {[...get_unique_years(cards)].sort().map((year, index) => (
                     <p key={index}>
                         <Link 
                             key={index} 

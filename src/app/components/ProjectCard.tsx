@@ -1,10 +1,26 @@
 import React from 'react';
 import { Project } from '../types';
 import Image from 'next/image';
+import Link from 'next/link';
+import { FaGithub, FaYoutube } from 'react-icons/fa';
+import { SiGoogleslides } from 'react-icons/si';
+import { LuLink } from 'react-icons/lu';
 
 // Define props for component
 interface ProjectCardProps {
     project: Project;
+}
+
+function get_link_icon(link: string) {
+	if (link.includes("github")) {
+		return <FaGithub className='dark:invert-1' size={28}/>
+	} else if (link.includes("youtube")) {
+		return <FaYoutube className='dark:invert-1' size={28}/>
+	} else if (link.includes("presentation")) {
+		return <SiGoogleslides className='dark:invert-1' size={28}/>
+	} else {
+		return <LuLink className='dark:invert-1' size={28}/>
+	}
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
@@ -13,7 +29,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 			{/* Title */}
 			<div className='border-b border-dashed'>
 				<p className='text-sm font-courier'>/{project.year}</p>
-				<h3 className="text-2xl font-bold text-foreground mb-2">{project.title}</h3>
+				<div className='flex justify-between'>
+					<h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
+					<div className='flex gap-2'>
+						{[...project.links].map((link, index) => (
+							<Link target='_blank' href={`${link}`} key={index}>{get_link_icon(link)}</Link>
+						))}
+					</div>
+				</div>
 			</div>
 
 			{/* Description */}

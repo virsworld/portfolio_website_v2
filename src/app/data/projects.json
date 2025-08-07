@@ -6,6 +6,7 @@
         "tags": ["Python", "Youtube", "Discord"],
         "description": "Music bot that plays audio in discord voice channel based on user query.",
         "img": "/assets/project/music_bot.png",
+        "links": ["https://github.com/virsworld/discord_bot"],
         "slug": "discord-music-bot"
     },
     {
@@ -15,6 +16,7 @@
         "tags": ["C", "Minimax", "Game Theory"],
         "description": "A bot that utilizes the Minimax algorithm to play Reversi also known as Othello.",
         "img": "/assets/project/reversi.png",
+        "links": ["https://github.com/virsworld/APS105_labs"],
         "slug": "reversi-bot"
     },
     {
@@ -24,6 +26,7 @@
         "tags": ["React", "Tailwind", "Three.js"],
         "description": "The first iteration of my personal website in which I explored the use of 3D models.",
         "img": "/assets/project/portfolio_v1.png",
+        "links": ["https://github.com/virsworld/3D_Portfolio_Redesign", "https://virpatel.netlify.app/"],
         "slug": "personal-website-v1"
     },
     {
@@ -33,6 +36,7 @@
         "tags": ["React", "Tailwind", "Node.js", "MongoDB"],
         "description": "Basic note taking platform.",
         "img": "/assets/project/notes_app.png",
+        "links": ["https://github.com/virsworld/notes_app_SS", "https://www.youtube.com/playlist?list=PLB9362XTPe5WMG336mfskdVWbgV0Sv9T2"],
         "slug": "simple-stream"
     },
     {
@@ -42,6 +46,7 @@
         "tags": ["React", "Tailwind", "Node.js", "Express.js"],
         "description": "Platform for programming students to share test cases.",
         "img": "/assets/project/tcdb.png",
+        "links": ["https://github.com/virsworld/testcases"],
         "slug": "testcaseDB"
     },
     {
@@ -51,6 +56,7 @@
         "tags": ["Verilog", "ModelSim", "FPGA", "Hashing"],
         "description": "Attempts to crack user passwords taken from leaked hash data by hashing common passwords and cross-referencing.",
         "img": "/assets/project/cracker_project.png",
+        "links": ["https://docs.google.com/presentation/d/1Uy7J0Y0WWg2kw5RO47jo83wm7phxgxnKt66pGZyQ9IQ/edit?usp=sharing"],
         "slug": "cracker"
     }
 ]

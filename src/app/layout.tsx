@@ -23,6 +23,9 @@ const courier = Courier_Prime({
 export const metadata: Metadata = {
   title: "Vir | Portfolio",
   description: "Showcasing my work and thoughts.",
+  icons: {
+    icon: "/favicon.ico", // Path to your favicon file in the /app or /public directory
+  },
 };
 
 export default function RootLayout({
