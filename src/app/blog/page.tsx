@@ -21,7 +21,7 @@ export default function Blog_() {
 						<Search 
 							cards={blogPosts}
                             type='blog'
-							quote={<p>"It's time for you to look inward, and start asking yourself the big questions. Who are you? And what do you want?" - <span className="italic">Iroh</span></p>}
+							quote={<p>&quot;It&apos;s time for you to look inward, and start asking yourself the big questions. Who are you? And what do you want?&quot; - <span className="italic">Iroh</span></p>}
 						/>
 					</div>
 

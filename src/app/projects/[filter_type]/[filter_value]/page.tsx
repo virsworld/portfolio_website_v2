@@ -42,7 +42,7 @@ export default async function ProjectsFiltered({ params }: ProjectFilterPageProp
                         <Search 
                             cards={projects}
                             type='projects'
-                            quote={<p>"Every engineer has his 10 years in the sun." - <span className="italic">Giovanni Battista Caproni</span></p>}
+                            quote={<p>&quot;Every engineer has his 10 years in the sun.&quot; - <span className="italic">Giovanni Battista Caproni</span></p>}
                             />
                     </div>
 

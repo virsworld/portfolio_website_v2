@@ -35,7 +35,7 @@ export default function About() {
                     <br></br>
                     <br></br>
                     Some of my hobbies include playing basketball, building cool projects,
-                    and playing video games. If you think we could be friends don't hesitate
+                    and playing video games. If you think we could be friends don&apos;t hesitate
                     to contact me!
                     
                 </p>

@@ -6,7 +6,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { FaLinkedin, FaDiscord } from "react-icons/fa";
 
 interface HeaderProps {
-    is_front_page: Boolean
+    is_front_page: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     // Dynamic background class
-    let bg: string = is_front_page ? 'bg-none' : 'bg-gradient-to-r from-[-5%] from-info to-[150%] to-sky-blue';
+    const bg: string = is_front_page ? 'bg-none' : 'bg-gradient-to-r from-[-5%] from-info to-[150%] to-sky-blue';
 
     // Navigation links
     const navLinks = useMemo(() => [
@@ -60,12 +60,6 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
             };
         }
     }, [isMenuOpen, navLinks]);
-
-    const [isMounted, setIsMounted] = useState(false);
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
 
     return (
         <>
