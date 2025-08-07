@@ -4,9 +4,9 @@ import BlogCard from '@/app/components/BlogCard'
 import Header from '@/app/components/Header'
 
 interface BlogPostPageProps {
-    params: {
+    params: Promise<{
         post_slug: string;
-    }
+    }>
 }
 
 export default async function BlogPostContent({ params }: BlogPostPageProps) {
@@ -22,7 +22,6 @@ export default async function BlogPostContent({ params }: BlogPostPageProps) {
         </>
     )
 
-    console.log(curr_post)
     return (
 		<>	
 			<Header is_front_page={false} />
