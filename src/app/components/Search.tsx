@@ -5,10 +5,11 @@ import Link from "next/link";
 
 interface SearchProps {
     cards: Project[] | Blog[];
-    quote: React.ReactNode 
+    quote: React.ReactNode;
+    type: string;
 }
 
-const Search: React.FC<SearchProps> = ({ cards, quote }) => {
+const Search: React.FC<SearchProps> = ({ cards, quote, type }) => {
 
     function get_unique_tags(cards: Project[] | Blog[]) {
         const all_tags = cards.flatMap(card => card.tags);
@@ -24,7 +25,7 @@ const Search: React.FC<SearchProps> = ({ cards, quote }) => {
         <div className="mt-16 p-4 pl-0">
             <h2 className="text-4xl font-bold" >SEARCH.</h2>
             <blockquote className="mt-10 mb-6">
-                <a target="_blank" href="https://www.imdb.com/title/tt2013293/quotes/">{quote}</a>
+                <a target="_blank" href={type == 'projects' ? "https://www.imdb.com/title/tt2013293/quotes/" : "https://www.goodreads.com/author/quotes/12618081.Uncle_Iroh"}>{quote}</a>
             </blockquote>
             
             { /* Search by tag */ }
@@ -34,7 +35,7 @@ const Search: React.FC<SearchProps> = ({ cards, quote }) => {
                     <p key={index}>
                         <Link 
                             key={index} 
-                            href={`/projects/tags/${sanitize_to_slug(tag)}`}
+                            href={`/${type}/tags/${sanitize_to_slug(tag)}`}
                             className="animated-underline"
                             scroll={false} 
                         >
@@ -51,7 +52,7 @@ const Search: React.FC<SearchProps> = ({ cards, quote }) => {
                     <p key={index}>
                         <Link 
                             key={index} 
-                            href={`/projects/year/${sanitize_to_slug(year.toString())}`}
+                            href={`/${type}/year/${sanitize_to_slug(year.toString())}`}
                             className="animated-underline"
                             scroll={false}
                         >
