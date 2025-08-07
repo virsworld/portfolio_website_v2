@@ -49,7 +49,7 @@ export default async function ProjectsFiltered({ params }: ProjectFilterPageProp
                     {/* Projects */}
                     <div className="grid grid-cols-1">
                         {filteredProjects.length > 0 ? (
-                            filteredProjects.map((project) => (
+                            filteredProjects.reverse().map((project) => (
                                 <ProjectCard key={project.id} project={project} />
                             ))
                         ) : (

@@ -49,7 +49,7 @@ export default async function BlogsFiltered({ params }: BlogFilterPageProps) {
                     {/* Projects */}
                     <div className="grid grid-cols-1">
                         {filteredBlogs.length > 0 ? (
-                            filteredBlogs.map((blog) => (
+                            filteredBlogs.reverse().map((blog) => (
                                 <BlogCard key={blog.id} blogPost={blog} />
                             ))
                         ) : (
