@@ -6,10 +6,10 @@ import Search from '@/app/components/Search'
 import Header from '@/app/components/Header'
 
 interface ProjectFilterPageProps {
-    params: {
+    params: Promise<{
         filter_type: string;
         filter_value: string;
-    }
+    }>;
 }
 
 export default async function ProjectsFiltered({ params }: ProjectFilterPageProps) {
