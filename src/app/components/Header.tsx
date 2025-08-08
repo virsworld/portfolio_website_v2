@@ -64,10 +64,10 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
     return (
         <>
             {/* Full-screen Navigation Menu */}
-            <header className={`w-full z-50 relative flex items-center justify-between px-6 py-4`}>
+            <header className={`w-full bg-transparent z-70 fixed flex items-center justify-between px-6 py-4 backdrop-blur-xs`}>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                     <Image
-                        className="opacity-90 z-50 hover:opacity-100 invert dark:invert-0"
+                        className="opacity-90 hover:opacity-100 invert dark:invert-0"
                         src={'/assets/project/logo-removebg.png'}
                         alt="Logo"
                         width={70}
@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                 {/* Burger Menu Button */}
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="flex flex-col items-center justify-center w-8 h-8 focus:outline-none z-50 cursor-pointer"
+                    className="flex flex-col items-center justify-center w-8 h-8 focus:outline-none cursor-pointer"
                     aria-label="Toggle navigation menu"
                 >
                     <span
@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
 
             {/* Full-screen Navigation Menu */}
             <div
-                className={`fixed bg-transparent inset-0 w-full z-40 transition-opacity duration-300
+                className={`fixed bg-transparent inset-0 w-full z-60 transition-opacity duration-300
                     ${isMenuVisible ? 'opacity-100 visible' : 'opacity-0 invisible'}
                     bg-background grid grid-cols-2 grid-rows-2`}
             >
