@@ -46,7 +46,7 @@
         "tags": ["React", "Tailwind", "Node.js", "Express.js"],
         "description": "Platform for programming students to share test cases.",
         "img": "/assets/project/tcdb.png",
-        "links": ["https://github.com/virsworld/testcases"],
+        "links": ["https://github.com/virsworld/testcases", "https://youtu.be/Yy4bauW4N2I"],
         "slug": "testcaseDB"
     },
     {
