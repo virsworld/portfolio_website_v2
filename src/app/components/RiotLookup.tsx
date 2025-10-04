@@ -22,6 +22,11 @@ interface RiotLookupData {
   topChampions: TopChampion[];
 }
 
+interface ApiError {
+    message: string;
+    code: number;
+}
+
 const RiotLookup: React.FC = () => {
   const [riotId, setRiotId] = useState("");
   const [region, setRegion] = useState("na1");
@@ -51,8 +56,9 @@ const RiotLookup: React.FC = () => {
       const result = await res.json();
       if (!res.ok) throw new Error(result.error || "Failed to fetch");
       setData(result);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      const apiErr = err as ApiError;  
+      setError(apiErr.message);
     } finally {
       setLoading(false);
     }
