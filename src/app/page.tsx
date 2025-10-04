@@ -1,6 +1,7 @@
 'use client';
 
 import Header from "./components/Header";
+import RiotLookup from "./components/RiotLookup";
 
 import dynamic from 'next/dynamic';
 import WebRing from "./components/WebRing";
