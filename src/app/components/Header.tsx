@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
 
     return (
         <>
-            {/* Full-screen Navigation Menu */}
+            {/* Header bar with logo and burger icon */}
             <header className={`w-full bg-transparent z-70 fixed flex items-center justify-between px-6 py-4 backdrop-blur-xs`}>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                     <Image
@@ -92,15 +92,15 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                         }`}
                     ></span>
                 </button>
-            </header> 
+            </header>
 
             {/* Full-screen Navigation Menu */}
             <div
                 className={`fixed bg-transparent inset-0 w-full z-60 transition-opacity duration-300
                     ${isMenuVisible ? 'opacity-100 visible' : 'opacity-0 invisible'}
-                    bg-background grid grid-cols-2 grid-rows-2`}
+                    bg-background grid grid-cols-1 md:grid-cols-2 md:grid-rows-2`}
             >
-                {navLinks.map((link, index) => {
+                {navLinks.map((link) => {
                     if (link.name !== 'Contact')
                         return <div
                             key={link.name}
@@ -109,8 +109,8 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                                 bg-background
                                 text-foreground
                                 underline
-                                
                                 transition-opacity duration-300
+                                pt-10
                                 ${visibleLinks.includes(link.name) ? 'opacity-100' : 'opacity-0'}
                             `}
                         >
@@ -119,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                                 onClick={() => setIsMenuOpen(false)}
                                 className="w-full h-full flex items-center justify-center"
                             >
-                                <p className="text-xl sm:text-3xl font-bold">{link.name}</p>
+                                <p className="text-3xl sm:text-3xl font-bold">{link.name}</p>
                             </Link>
                         </div>
                     else
@@ -127,29 +127,27 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                             key={link.name}
                             className={`
                                 relative
+                                flex flex-col items-center justify-center
                                 bg-background
                                 text-foreground
-                                pl-20
-                                pt-70
                                 transition-opacity duration-300
                                 ${visibleLinks.includes(link.name) ? 'opacity-100' : 'opacity-0'}
                             `}
                         >
-                            <p className="text-xl sm:text-3xl font-bold">{`${link.name}.`}</p>
-                            <div className="fixed bottom-0 right-0 p-4">
+                            <p className="text-3xl sm:text-3xl font-bold">{`${link.name}.`}</p>
+                            <div className="mt-6 text-center md:text-left md:absolute md:bottom-8 md:right-8 md:mt-0 md:p-4">
                                 <ul>
-                                    <div className="flex gap-2">
-                                        <MdAlternateEmail className="dark:invert-1" size={22}/><li>virpatel71@gmail.com</li>
-                                    </div>
-                                    <div className="flex gap-2">
-                                        <FaLinkedin className="dark:invert-1 " size={21}/><a target="_blank" href="https://www.linkedin.com/in/vir-patel"><li>linkedin.com/in/vir-patel</li></a>
-                                    </div>
-                                    <div className="flex gap-2">
-                                        <FaDiscord className="dark:invert-1 " size={22}/><li>virwashere</li>
-                                    </div>
+                                    <li className="flex gap-2 items-center justify-center md:justify-start mb-2">
+                                        <MdAlternateEmail className="dark:invert-1" size={22}/><span>virpatel71@gmail.com</span>
+                                    </li>
+                                    <li className="flex gap-2 items-center justify-center md:justify-start mb-2">
+                                        <FaLinkedin className="dark:invert-1 " size={21}/><a target="_blank" href="https://www.linkedin.com/in/vir-patel" className="hover:underline"><span>linkedin.com/in/vir-patel</span></a>
+                                    </li>
+                                    <li className="flex gap-2 items-center justify-center md:justify-start">
+                                        <FaDiscord className="dark:invert-1 " size={22}/><span>virwashere</span>
+                                    </li>
                                 </ul>
                             </div>
-
                         </div>
                 })}
             </div>
@@ -157,4 +155,4 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
     )
 }
 
-export default Header
+export default Header;

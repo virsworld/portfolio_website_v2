@@ -1,16 +1,6 @@
 [
     {
         "id": 0,
-        "title": "Discrd Music Bot",
-        "year": 2024,
-        "tags": ["Python", "Youtube", "Discord"],
-        "description": "Music bot that plays audio in discord voice channel based on user query.",
-        "img": "/assets/project/music_bot.png",
-        "links": ["https://github.com/virsworld/discord_bot"],
-        "slug": "discord-music-bot"
-    },
-    {
-        "id": 1,
         "title": "Reversi Bot",
         "year": 2024,
         "tags": ["C", "Minimax", "Game Theory"],
@@ -18,6 +8,16 @@
         "img": "/assets/project/reversi.png",
         "links": ["https://github.com/virsworld/APS105_labs"],
         "slug": "reversi-bot"
+    },
+    {
+        "id": 1,
+        "title": "Discrd Music Bot",
+        "year": 2024,
+        "tags": ["Python", "Youtube", "Discord"],
+        "description": "Music bot that plays audio in discord voice channel based on user query.",
+        "img": "/assets/project/music_bot.png",
+        "links": ["https://github.com/virsworld/discord_bot"],
+        "slug": "discord-music-bot"
     },
     {
         "id": 2,
@@ -41,8 +41,18 @@
     },
     {
         "id": 4,
-        "title": "TestcaseDB",
+        "title": "Cracker",
         "year": 2024,
+        "tags": ["Verilog", "ModelSim", "FPGA", "Hashing"],
+        "description": "Attempts to crack user passwords taken from leaked hash data by hashing common passwords and cross-referencing.",
+        "img": "/assets/project/cracker_project.png",
+        "links": ["https://docs.google.com/presentation/d/1Uy7J0Y0WWg2kw5RO47jo83wm7phxgxnKt66pGZyQ9IQ/edit?usp=sharing"],
+        "slug": "cracker"
+    },
+    {
+        "id": 5,
+        "title": "TestcaseDB",
+        "year": 2025,
         "tags": ["React", "Tailwind", "Node.js", "Express.js"],
         "description": "Platform for programming students to share test cases.",
         "img": "/assets/project/tcdb.png",
@@ -50,13 +60,23 @@
         "slug": "testcaseDB"
     },
     {
-        "id": 5,
-        "title": "Cracker",
+        "id": 6,
+        "title": "FPGA Controlled Drone",
         "year": 2025,
-        "tags": ["Verilog", "ModelSim", "FPGA", "Hashing"],
-        "description": "Attempts to crack user passwords taken from leaked hash data by hashing common passwords and cross-referencing.",
-        "img": "/assets/project/cracker_project.png",
-        "links": ["https://docs.google.com/presentation/d/1Uy7J0Y0WWg2kw5RO47jo83wm7phxgxnKt66pGZyQ9IQ/edit?usp=sharing"],
-        "slug": "cracker"
+        "tags": ["C", "VGA", "GPIO", "FPGA"],
+        "description": "Programmed the GPIO pins on an FPGA to control a drone using a keyboard. Used the VGA adapter to show a visual of the controls being pressed.",
+        "img": "/assets/project/drone_pic.png",
+        "links": ["https://docs.google.com/document/d/1xINSLgAJCWtmbgpRECSe4qnmQcOruEW_GY0csB1a9UA/edit?usp=sharing"],
+        "slug": "fpgadrone"
+    },
+    {
+        "id": 7,
+        "title": "ENE GIS",
+        "year": 2025,
+        "tags": ["C++", "Algorithms"],
+        "description": "Environmentally conscious Geographic Information System (GIS).",
+        "img": "/assets/project/eneGIS.png",
+        "links": ["https://drive.google.com/file/d/18Uvu4UOW92Pii9ffpepxXmFnBvzOwh73/view?usp=sharing"],
+        "slug": "enegis"
     }
 ]

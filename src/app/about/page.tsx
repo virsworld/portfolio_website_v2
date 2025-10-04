@@ -9,19 +9,19 @@ export default function About() {
     return (
         <>
             <Header is_front_page={false}/>
-            <div className="z-0 absolute top-0 left-0 h-full flex items-center">
+            <div className="relative flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto px-6 py-20">
                 <Tilt>
 
                 <Image 
-                className="p-4"
+                className="p-4 max-w-full h-auto"
                 src={'/assets/about/baymax.jpeg'}
                 alt='Me at Anime North'
-                width={2000}
-                height={500}
+                width={600}
+                height={300}
                 priority
                 />
                 </Tilt>
-                <p className="p-20">
+                <p className="p-4 md:p-10 max-w-lg">
                     I was born in Uganda and immigrated to Canada when I was 7 years old.
                     Currently home to the Waterloo Region.
                     <br></br>

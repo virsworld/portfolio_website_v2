@@ -12,12 +12,12 @@ export default function Projects() {
     return (
 		<>	
 			<Header is_front_page={false} />
-			<main className="overflow-hidden mx-auto p-14 pb-0">
-				<h1 className="text-6xl text-right font-bold mt-14">PROJECTS</h1>
-				<div className='grid grid-cols-[1.5fr_3fr] border-t border-border mt-5'>
+			<main className="overflow-hidden mx-auto p-6 md:p-14 pb-0">
+				<h1 className="text-4xl md:text-6xl text-right font-bold mt-14">PROJECTS</h1>
+				<div className='grid grid-cols-1 md:grid-cols-[1.5fr_3fr] border-t border-border mt-5 gap-6'>
 
 					{/* Search */}
-					<div className='border border-l-0 border-r-border border-t-0 border-b-0'>
+					<div className='md:border md:border-l-0 md:border-r-border md:border-t-0 md:border-b-0'>
 						<Search 
 							cards={projects}
 							type='projects'
@@ -27,7 +27,7 @@ export default function Projects() {
 
 					{/* Projects */}
 					<div className="grid grid-cols-1">
-						{[...projects].reverse().map((project) => (
+						{[...projects].toReversed().map((project) => (
 							<ProjectCard key={project.id} project={project} />
 						))}
 					</div>

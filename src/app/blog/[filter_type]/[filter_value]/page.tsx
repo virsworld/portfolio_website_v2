@@ -16,7 +16,7 @@ export default async function BlogsFiltered({ params }: BlogFilterPageProps) {
     const { filter_type, filter_value } = await params; // await to silence an error
     const blog_posts: Blog[] = blogData;
 
-    const filteredBlogs = blog_posts.reverse().filter(blog => {
+    const filteredBlogs = blog_posts.toReversed().filter(blog => {
         const sanitized_value = sanitize_to_slug(filter_value.toString());
 
         if (filter_type == 'tags') {
@@ -33,12 +33,12 @@ export default async function BlogsFiltered({ params }: BlogFilterPageProps) {
     return (
         <>
             <Header is_front_page={false} />
-            <main className="mx-auto p-14 pb-0">
-                <h1 className="text-6xl text-right font-bold mt-14">BLOG</h1>
-                <div className='grid grid-cols-[1.5fr_3fr] border-t border-border mt-5'>
+            <main className="overflow-hidden mx-auto p-6 md:p-14 pb-0">
+				<h1 className="text-4xl md:text-6xl text-right font-bold mt-14">BLOG</h1>
+				<div className='grid grid-cols-1 md:grid-cols-[1.5fr_3fr] border-t border-border mt-5 gap-6'>
 
-                    {/* Search */}
-                    <div className='border border-l-0 border-r-border border-t-0 border-b-0'>
+					{/* Search */}
+					<div className='md:border md:border-l-0 md:border-r-border md:border-t-0 md:border-b-0'>
                         <Search 
                             cards={blog_posts}
                             type='blog'
