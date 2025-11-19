@@ -15,8 +15,8 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-    // Dynamic background class
-    const bg: string = is_front_page ? 'bg-none' : 'bg-gradient-to-r from-[-5%] from-info to-[150%] to-sky-blue';
+    // Make header transparent on front page
+    const bg: string = is_front_page ? 'w-full bg-transparent z-70 fixed flex items-center justify-between px-6 py-4 backdrop-blur-xs' : 'left-0 right-0 top-0 w-full bg-transparent z-70 sticky flex items-center justify-between px-6 py-4 backdrop-blur-xs';
 
     // Navigation links
     const navLinks = useMemo(() => [
@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
     return (
         <>
             {/* Header bar with logo and burger icon */}
-            <header className={`w-full bg-transparent z-70 fixed flex items-center justify-between px-6 py-4 backdrop-blur-xs`}>
+            <header className={bg}>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                     <Image
                         className="opacity-90 hover:opacity-100 invert dark:invert-0"
