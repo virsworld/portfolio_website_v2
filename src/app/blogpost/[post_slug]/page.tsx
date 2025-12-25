@@ -26,8 +26,8 @@ export default async function BlogPostContent({ params }: BlogPostPageProps) {
     // Dynamically import the MDX component based on content filename
     let MdxComponent
     try {
-        const module = await import(`@/app/data/${curr_post.content}`)
-        MdxComponent = module.default
+        const mod = await import(`@/app/data/${curr_post.content}`)
+        MdxComponent = mod.default
     } catch (error) {
         return (
             <>
