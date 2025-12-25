@@ -2,6 +2,7 @@ import blogData from '@/app/data/blog.json'
 import { Blog } from '@/app/types'
 import BlogCard from '@/app/components/BlogCard'
 import Header from '@/app/components/Header'
+import TableOfContents from '@/app/components/TableOfContents'
 
 interface BlogPostPageProps {
     params: Promise<{
@@ -22,13 +23,34 @@ export default async function BlogPostContent({ params }: BlogPostPageProps) {
         </>
     )
 
+    // Dynamically import the MDX component based on content filename
+    let MdxComponent
+    try {
+        const module = await import(`@/app/data/${curr_post.content}`)
+        MdxComponent = module.default
+    } catch (error) {
+        return (
+            <>
+                <Header is_front_page={false} />
+                <main className="overflow-hidden mx-auto p-14 pb-0">
+                    <p>Content for this blog post could not be loaded</p>
+                </main>
+            </>
+        )
+    }
+
     return (
 		<>	
 			<Header is_front_page={false} />
-			<main className="overflow-hidden mx-auto p-14 pb-0">
+			<main className="relative mx-auto flex flex-col gap-8 px-32 py-12 md:px-0 md:py-24 max-w-6xl">
                 <h2 className='text-5xl font-bold'>{`${curr_post.title}`}</h2>
-                <p className='border-b pt-2 pb-2'>{`${curr_post.description}`}</p>
-                <div className='p-20'>{`${curr_post.content}`}</div>
+                <p className='text-gray-500 dark:text-gray-200 border-b border-gray-300 dark:border-gray-600 pb-2'>{`${curr_post.description}`}</p>
+                <div className="relative flex flex-col md:flex-row gap-10">
+                    <article className="animate-tile-fade-in prose prose-lg dark:prose-invert max-w-none pt-6 md:pt-10 md:p-10 md:pl-0 flex-1 min-w-0">
+                        <MdxComponent />
+                    </article>
+                    <TableOfContents />
+                </div>
             </main>
         </>
     )

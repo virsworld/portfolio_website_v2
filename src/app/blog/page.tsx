@@ -12,7 +12,7 @@ export default function Blog_() {
     return (
 		<>	
 			<Header is_front_page={false} />
-			<main className="overflow-hidden mx-auto p-6 md:p-14 pb-0">
+			<main className="overflow-hidden mx-auto p-6 md:p-38 md:pt-20 pb-0">
 				<h1 className="text-4xl md:text-6xl text-right font-bold mt-14">BLOG</h1>
 				<div className='grid grid-cols-1 md:grid-cols-[1.5fr_3fr] border-t border-border mt-5 gap-6'>
 
@@ -26,7 +26,7 @@ export default function Blog_() {
 					</div>
 
 					{/* Blog Posts */}
-					<div className="grid grid-cols-1">
+					<div className="grid grid-cols-1 gap-10 justify-items-end py-14">
 						{[...blogPosts].toReversed().map((blogPost) => (
 							<BlogCard key={blogPost.id} blogPost={blogPost} />
 						))}
