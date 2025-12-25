@@ -91,12 +91,12 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                 >
                     <span
                         className={`invert block h-0.5 w-7 rounded-full transform transition duration-300 ease-in-out bg-background ${
-                            isMenuOpen ? 'rotate-45 translate-y-0.25' : '-translate-y-1'
+                            isMenuOpen ? 'rotate-45 translate-y-px' : '-translate-y-1'
                         }`}
                     ></span>
                     <span
                         className={`invert block h-0.5 w-7 rounded-full transform transition duration-300 ease-in-out bg-background ${
-                            isMenuOpen ? '-rotate-45 -translate-y-0.25' : 'translate-y-1'
+                            isMenuOpen ? '-rotate-45 -translate-y-px' : 'translate-y-1'
                         }`}
                     ></span>
                 </button>
