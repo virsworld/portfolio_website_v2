@@ -26,7 +26,7 @@ export default function Blog_() {
 					</div>
 
 					{/* Blog Posts */}
-					<div className="grid grid-cols-1 gap-10 justify-items-end py-14">
+					<div className="grid grid-cols-1 gap-10 py-14">
 						{[...blogPosts].toReversed().map((blogPost) => (
 							<BlogCard key={blogPost.id} blogPost={blogPost} />
 						))}

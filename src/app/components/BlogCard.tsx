@@ -10,7 +10,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ blogPost }) => {
   return (
-        <div className='w-full max-w-3xl animate-tile-fade-in'>
+        <div className='w-full animate-tile-fade-in'>
             <Link href={`/blogpost/${blogPost.slug}`}>
                 <div className='p-14 py-0 md:pr-0 flex flex-col w-full'>
                     {/* Cover Image */}
