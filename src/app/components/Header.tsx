@@ -75,14 +75,14 @@ const Header: React.FC<HeaderProps> = ({ is_front_page }) => {
                         height={70}
                     />
                 </Link>
-                <Link href="/riftrewind1" onClick={() => setIsMenuOpen(false)}>
+                {/* <Link href="/riftrewind1" onClick={() => setIsMenuOpen(false)}>
                     <div className="flex flex-row">
                         <AWSLogo
                             className="h-10 w-auto opacity-90 hover:opacity-100 dark:invert-0"
                         />
                         <p className="px-4 pt-3 font-mono text-md">Rift Rewind 1</p>
                     </div>
-                </Link>
+                </Link> */}
                 {/* Burger Menu Button */}
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}

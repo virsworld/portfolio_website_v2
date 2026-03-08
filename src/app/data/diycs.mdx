@@ -2,58 +2,40 @@ import Note from '@/app/components/Note';
 
 ## Background
 Inspired by a couple YouTube videos, my brother suggested setting up Network-Attached Storage (NAS) at home.
-I decided to help once I completed my final exams.
+I decided to help once I completed my final exams. The objective was to set up a NAS server that could be accessed remotely, 
+allowing us to back-up and access files from anywhere.
 
 ## Hardware
 **Desktop**: Dell OptiPlex 5050 Tower<br></br>
 **Processor**: Quad Core 7th Generation Intel Core i5-7500<br></br>
 **RAM**: 16 GB 2400 MHz<br></br>
-**Disks**: 250 GB HDD + ...<br></br>
+**Disks**: 512 GB Kingston SSD, 5TB Western Digital HDD (unused drives)<br></br>
+
 <Note>
-All hardware except for the ... was purchased for $100 from Facebook Marketplace.
+All hardware except for the drives was purchased for $100 from Facebook Marketplace.
 </Note>
 
+## Linux
+I decided to install Ubuntu Desktop on the machine, as I had already installed it before on my desktop. Although I'm aware
+the server version of Ubuntu is more optimized for this use case. The installation itself was straightforward, following
+the usual Format USB with ISO (in my case using Rufus) &rarr; Boot from USB &rarr; Setup and Install.
 
+## Immich
+Now that the OS was installed, I needed to set up the NAS software. I chose Immich, an open-source self-hosted photo and video backup solution.
+Following their documentation, I installed Docker Desktop and created three containers using the provided `docker-compose.yml` file. 
+The containers were for the Immich application, a PostgreSQL database, and Redis for caching.
 
+## Tailscale
+To enable remote access to the NAS, I set up Tailscale, a VPN service that allows secure access to devices on a private network. 
+I installed Tailscale on the NAS machine and configured it to allow access from my other devices. This way, I can access the NAS 
+from anywhere without needing to set up port forwarding or worry about dynamic IP addresses.
 
+## Management and Maintenance
+For managing the NAS, I use a combination of SSH for command-line access and the Immich web interface. Maintaining the system is
+relatively straightforward, with regular updates to the OS and the Immich application.
 
-
-
----
-## MDX Rendering Test ✅
-If you can see **this page**, your MDX file is being loaded and rendered. 
-If you can see **this page**, your MDX file is being loaded and rendered.
-If you can see **this page**, your MDX file is being loaded and rendered.
-
-## Markdown Features
-
-### Text formatting
-- **Bold text**
-- *Italic text*
-- ~~Strikethrough~~
-- `Inline code`
-
-### Lists
-- Item 1
-- Item 2
-  - Nested item
-  - Another nested item
-
-1. First
-2. Second
-3. Third
-
-### Blockquote
-> This is a blockquote.  
-> MDX should render this correctly.
-
----
-
-## Code Blocks
-
-```js
-function greet(name) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet("MDX"));
+## Issues and Future Plans
+While the setup is functional, the largest issue is dealing with data corruption upon power outages. My brother decided to invest in an Uninterruptible Power Supply (UPS) 
+to mitigate this issue. Additionally, we may consider having a RAID setup in the future for better data redundancy and performance. The most exciting future plan is to set 
+up a media server using Plex, which will allow us to stream our media files directly from the NAS to our devices. I anticipate this will be a challenge due to the hardware
+limitations, but it will be a fun project to work on. I will update this page as things progress!
