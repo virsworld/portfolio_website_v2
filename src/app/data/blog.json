@@ -9,5 +9,16 @@
         "content": "diycs.mdx",
         "img": "",
         "slug": "diycs"
+    },
+    {
+        "id": 1,
+        "title": "My First Hackathon",
+        "year": 2026,
+        "date": "16/03/2026",
+        "tags": ["Social", "Hackathon"],
+        "description": "Reflecting on participating in my first hackathon.",
+        "content": "firsthack.mdx",
+        "img": "",
+        "slug": "firsthack"
     }
 ]
